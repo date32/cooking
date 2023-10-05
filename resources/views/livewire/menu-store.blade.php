@@ -5,7 +5,7 @@
         <div class="tcenter f1-5">メニュー登録</div>
         <form wire:submit.prevent="menuStore">
             <div class="tcenter mt10">【メニュー名】</div>
-            <div class="tcenter"><input type="text" wire:model="menu_name" required></div>
+            <div class="tcenter"><input class="wi-30 sp-80" type="text" wire:model="menu_name" required></div>
             @error('menu_name')
                 <div class="c-red">{{ $message }}</div>
             @enderror
@@ -15,7 +15,7 @@
 
             <div class="mt10 tcenter">【材料】</div>
             <div class="tcenter">※複数選択出来ます</div>
-            <div class="flex-wrap wi-50 ccenter3">
+            <div class="flex-wrap wi-50 ccenter3 mb30 sp-100 sp-grid3">
                 @foreach ($materials as $material)
                     <div class="mr10 mt10">
                         <input type="checkbox" id="{{ $material->material_name }}" wire:model="material_name"

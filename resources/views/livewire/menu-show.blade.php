@@ -3,12 +3,12 @@
     <div class="tcenter f1-5">メニュー一覧</div>
 
 <div class="wi-90 ccenter3 mb50">
-    <div class="grid4">
+    <div class="grid4 sp-grid2">
         @foreach ($menus as $menu)
             <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5"><a href="/menu/edit/{{ $menu->id }}">{{ $menu->menu_name }}</a></div>
                 <div class="mt10"><img class="ra10 ccenter3" src="{{ $menu->menu_img }}" alt=""></div>
-                <div class="grid3 mt10">
+                <div class="grid3 mt10 sp-f0-5">
                     <div>
                         <div class="tcenter">好き</div>
                         @foreach ($menu->likesAndDislikes as $likesAndDislikes)

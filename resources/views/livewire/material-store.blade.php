@@ -4,7 +4,7 @@
         <div class="tcenter f1-5">材料登録</div>
         <form wire:submit.prevent="materialStore">
             <div class="tcenter mt10">【材料名】</div>
-            <div class="tcenter"><input class="wi-30" type="text" wire:model="material_name" required></div>
+            <div class="tcenter"><input class="wi-30 sp-80" type="text" wire:model="material_name" required></div>
             
             <div class="tcenter mt10">【種類】</div>
             <div class="mt10 tcenter">

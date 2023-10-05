@@ -9,8 +9,7 @@
 
             <div class="tcenter mt30">【材料】</div>
 
-
-            <div class="grid6">
+            <div class="grid6 sp-grid3">
                 @foreach ($materials->materialOfMenus as $item)
                     <div class="original-box-shadow">
                         <div>{{ $item->material->material_name }}</div>
@@ -19,7 +18,7 @@
                 @endforeach
             </div>
 
-            <div class="mt30 wi-50 ccenter3 grid3">
+            <div class="mt30 wi-50 ccenter3 sp-100 grid3">
                 <div>
                     <div class="tcenter">【好き】</div>
                     @foreach ($menuDetail->likesAndDislikes as $likesAndDislikes)
@@ -62,7 +61,7 @@
 
                 <div class="tcenter mt30">【材料変更】</div>
                 <div class="tcenter">複数選択出来ます</div>
-                <div class="grid6 mb30">
+                <div class="grid6 mb30 sp-grid3">
                     @foreach ($allMaterials as $material)
                         <div class="original-box-shadow mt10">
                             <input type="checkbox" id="{{ $material->material_name }}" wire:model="materialsUpdate"

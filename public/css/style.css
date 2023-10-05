@@ -605,6 +605,9 @@ a:hover {
 
 @media(max-width: 600px) {
 
+    .sp-f0-5 {
+        font-size: 0.5rem;
+    }
     .sp-10 {
         width: 10%;
     }
@@ -656,8 +659,14 @@ a:hover {
     .sp-he3rem {
         height: 3rem;
     }
+    .sp-he100 {
+        height: 100%;
+    }
+    .sp-mb100 {
+        margin-bottom: 100px;
+    }
 
-    .flex {
+    .sp-block {
         display: block;
     }
 

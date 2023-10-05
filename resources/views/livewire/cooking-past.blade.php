@@ -1,11 +1,11 @@
 <div class="img4">
     <livewire:components.header />
 
-    <div class="wi-90 ccenter3">
+    <div class="wi-90 ccenter3 mb30 sp-mb100">
         <div class="tcenter f1-5">{{ $yearMonth }}月　調理一覧</div>
-        <div class="grid6 mt10">
+        <div class="grid6 mt10 sp-grid3">
             @foreach ($dates as $date)
-                <div class="original-box-shadow mb20">
+                <div class="original-box-shadow">
                     <div>{{ $date->date }}</div>
                     <div><a href="/menu/edit/{{ $date->menu->id }}">{{ $date->menu->menu_name }}</a></div>
                     <div><img class="ra10" src="{{ $date->menu->menu_img }}" alt=""></div>

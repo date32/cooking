@@ -9,9 +9,9 @@
             </div>
 
             <div class="mt10 tcenter">【メニューを選択してください】</div>
-            <div class="grid6 bbd">
+            <div class="grid6 bbd sp-grid3">
                 @foreach ($menus as $menu)
-                    <div class="mb10">
+                    <div class="mb30 original-box-shadow2">
                         <input type="radio" id="{{ $menu->menu_name }}" wire:model="menu" value="{{ $menu->id }}"
                             required name="1">
                         <label for="{{ $menu->menu_name }}">{{ $menu->menu_name }}</label>
@@ -39,6 +39,13 @@
     <livewire:components.link />
 
     <style>
+        .original-box-shadow2 {
+            color: #333333;
+            background-color: #dddddd72;
+            padding: 10px;
+            border-radius: 3px;
+            box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
+        }
         .original-button {
             display: flex;
             align-items: center;

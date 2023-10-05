@@ -3,8 +3,8 @@
     <div class="tcenter f1-5">材料一覧</div>
 
     <div class="wi-90 ccenter3 mb50">
-        <div class="grid4 mt10">
-            <div class="original-box-shadow2">
+        <div class="grid4 mt10 sp-block">
+            <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5">肉類</div>
                 <div class="grid2">
                     @foreach ($meatMate as $material)
@@ -16,7 +16,7 @@
                 </div>
             </div>
 
-            <div class="original-box-shadow2">
+            <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5">魚介類</div>
                 <div class="grid2">
                     @foreach ($fishMate as $material)
@@ -27,7 +27,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="original-box-shadow2">
+            <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5">野菜</div>
                 <div class="grid2">
                     @foreach ($vegeMate as $material)
@@ -38,7 +38,7 @@
                     @endforeach
                 </div>
             </div>
-            <div class="original-box-shadow2">
+            <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5">果物</div>
                 <div class="grid2">
                     @foreach ($fruitMate as $material)

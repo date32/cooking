@@ -2,7 +2,7 @@
     <livewire:components.header />
 
     <div class="tcenter f1-5">Dの一族</div>
-    <div class="grid3 wi-90 ccenter3 mb30">
+    <div class="grid3 wi-90 ccenter3 mb30 sp-block">
         @foreach ($members as $member)
             <div class="original-box-shadow mt10">
                 <div class="tcenter f1-5"><a href="/member/edit/{{ $member->id }}">{{ $member->name }}</a></div>
