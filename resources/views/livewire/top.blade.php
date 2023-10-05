@@ -2,6 +2,9 @@
     <livewire:components.header />
     <livewire:components.Link />
 
+    <div class="tcenter">since.2023.9.5</div>
+    
+
     <style>
         .img1::before {
             content: "";
