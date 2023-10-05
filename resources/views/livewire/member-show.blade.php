@@ -9,7 +9,7 @@
 
                 <div class="grid3">
                     <div>
-                        <div>【好きなメニュー】</div>
+                        <div>【好き】</div>
                         @foreach ($member->likesAndDislikes as $likesAndDislikes)
                             @if ($likesAndDislikes->evaluation_id == 1)
                                 <div class="mt10">
@@ -21,7 +21,7 @@
                         @endforeach
                     </div>
                     <div>
-                        <div>【普通なメニュー】</div>
+                        <div>【普通】</div>
                         @foreach ($member->likesAndDislikes as $likesAndDislikes)
                             @if ($likesAndDislikes->evaluation_id == 2)
                                 <div class="mt10">
@@ -32,7 +32,7 @@
                         @endforeach
                     </div>
                     <div>
-                        <div>【嫌いなメニュー】</div>
+                        <div>【嫌い】</div>
                         @foreach ($member->likesAndDislikes as $likesAndDislikes)
                             @if ($likesAndDislikes->evaluation_id == 3)
                                 <div class="mt10">
