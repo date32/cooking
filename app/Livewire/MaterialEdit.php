@@ -40,7 +40,7 @@ class MaterialEdit extends Component
         }
         if ($this->material_img != null) {
             // 画像と材料名を変更する時
-            if ($this->material_name != null) {
+            if (!empty($this->material_name)) {
                 // ディレクトリ名
                 $dir = 'img';
                 // ファイル名変更
@@ -51,7 +51,7 @@ class MaterialEdit extends Component
                 $materialUpdate->material_img = '/storage' . '/' . $dir . '/' . $file_name;
             }
             // 画像のみ変更する時（画像のファイル名を上書きまたは新規保存する）
-            if ($this->material_name == null) {
+            else {
                 // 材料名を取得
                 $name = $materialUpdate->material_name;
                 // ディレクトリ名
