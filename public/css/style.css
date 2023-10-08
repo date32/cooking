@@ -43,37 +43,43 @@
 .grid2 {
     display: grid;
     grid-template-columns: 49% 49%;
-    gap: 2%;
+    gap: 0 2%;
 }
 
 .grid3 {
     display: grid;
     grid-template-columns: 32% 32% 32%;
-    gap: 2%;
+    gap: 0 2%;
 }
 
 .grid4 {
     display: grid;
     grid-template-columns: 23.5% 23.5% 23.5% 23.5%;
-    gap: 2%;
+    gap: 0 2%;
 }
 
 .grid5 {
     display: grid;
     grid-template-columns: 18.4% 18.4% 18.4% 18.4% 18.4%;
-    gap: 2%;
+    gap: 0 2%;
 }
 
 .grid6 {
     display: grid;
     grid-template-columns: 15% 15% 15% 15% 15% 15%;
-    gap: 2%;
+    gap: 0 2%;
+}
+
+.grid7 {
+    display: grid;
+    grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
+    gap: 0 2%;
 }
 
 .grid8 {
     display: grid;
     grid-template-columns: 10.75% 10.75% 10.75% 10.75% 10.75% 10.75% 10.75% 10.75%;
-    gap: 2%;
+    gap: 0 2%;
 }
 
 .a {
@@ -295,7 +301,9 @@ a:hover {
 .he8 {
     height: 800px;
 }
-
+.he100 {
+    height: 100%;
+}
 .hemax {
     height: 100vh
 }
@@ -325,9 +333,11 @@ a:hover {
 .tr {
     text-align: right;
 }
+
 .f1 {
     font-size: 1rem;
 }
+
 .f1-5 {
     font-size: 1.5rem;
 }
@@ -588,6 +598,7 @@ a:hover {
     opacity: 0.5;
     transform: translate(-50%, 0);
 }
+
 .img12::before {
     content: "";
     background-image: url(../img/img12.jpg);
@@ -608,6 +619,7 @@ a:hover {
     .sp-f0-5 {
         font-size: 0.5rem;
     }
+
     .sp-10 {
         width: 10%;
     }
@@ -659,9 +671,11 @@ a:hover {
     .sp-he3rem {
         height: 3rem;
     }
+
     .sp-he100 {
         height: 100%;
     }
+
     .sp-mb100 {
         margin-bottom: 100px;
     }
@@ -685,12 +699,16 @@ a:hover {
     .sp-grid2 {
         display: grid;
         grid-template-columns: 49% 49%;
-        gap: 2%;
+        gap: 0 2%;
     }
 
     .sp-grid3 {
         display: grid;
         grid-template-columns: 32% 32% 32%;
-        gap: 2%;
+        gap: 0 2%;
     }
+}
+
+.overflow {
+    overflow: hidden;
 }

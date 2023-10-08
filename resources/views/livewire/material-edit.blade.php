@@ -6,7 +6,7 @@
         @if ($screen == 1)
             <div class="tcenter mt10">{{ $material->material_name }}</div>
             <div class="tcenter">{{ $material->material_type }}</div>
-            <div><img class="ccenter3 wi2" src="{{ $material->material_img }}" alt=""></div>
+            <div><img class="ra10 ccenter3 wi2" src="{{ $material->material_img }}" alt=""></div>
             <form wire:submit.prevent="materialUpdate">
                 <div class="mt10 tcenter">【材料名変更】</div>
                 <div class="tcenter"><input class="wi-30" type="text" wire:model="material_name"></div>
@@ -35,7 +35,15 @@
 
                 <div class="tcenter mt10">【画像変更】</div>
                 <div class="tcenter mt10"><input type="file" wire:model="material_img"></div>
-                
+
+                @if ($material_img)
+                    <div class="">
+                        <img class="mt10 ra10 ccenter3 wi-50 sp-80"
+                            src="{{ asset('storage/' . $material_img->store('images', 'public')) }}?{{ time() }}"
+                            alt="アップロードされた画像">
+                    </div>
+                @endif
+
                 <div class="mt30"><button class="original-button ccenter3" type="submit">変更</button></div>
             </form>
             <div class="mt30"><button class="original-button ccenter3" wire:click="screen2">この材料を削除</button></div>
@@ -67,6 +75,7 @@
             box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
             background-color: #c1ff82;
         }
+
         .original-button:hover {
             box-shadow: 0 0 #333;
             color: #fff;

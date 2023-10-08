@@ -11,7 +11,7 @@
 
             <div class="grid6 sp-grid3">
                 @foreach ($materials->materialOfMenus as $item)
-                    <div class="original-box-shadow">
+                    <div class="original-box-shadow mt10">
                         <div>{{ $item->material->material_name }}</div>
                         <div><img class="ra10" src="{{ $item->material->material_img }}" alt=""></div>
                     </div>
@@ -61,15 +61,102 @@
 
                 <div class="tcenter mt30">【材料変更】</div>
                 <div class="tcenter">複数選択出来ます</div>
-                <div class="grid6 mb30 sp-grid3">
-                    @foreach ($allMaterials as $material)
-                        <div class="original-box-shadow mt10">
-                            <input type="checkbox" id="{{ $material->material_name }}" wire:model="materialsUpdate"
-                                value="{{ $material->id }}" checked>
-                            <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
-                            <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
-                        </div>
-                    @endforeach
+
+                <div class="grid7 mb30 sp-grid3">
+                    <div class="original-box-shadow2 mt10">
+                        <div>肉類</div>
+                        @foreach ($allMaterials as $material)
+                            @if ($material->material_type == '肉類')
+                                <div class="mt10">
+                                    <input type="checkbox" id="{{ $material->material_name }}"
+                                        wire:model="materialsUpdate" value="{{ $material->id }}" checked>
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="original-box-shadow2 mt10">
+                        <div>魚介類</div>
+                        @foreach ($allMaterials as $material)
+                            @if ($material->material_type == '魚介類')
+                                <div class="mt10">
+                                    <input type="checkbox" id="{{ $material->material_name }}"
+                                        wire:model="materialsUpdate" value="{{ $material->id }}" checked>
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="original-box-shadow2 mt10">
+                        <div>野菜</div>
+                        @foreach ($allMaterials as $material)
+                            @if ($material->material_type == '野菜')
+                                <div class="mt10">
+                                    <input type="checkbox" id="{{ $material->material_name }}"
+                                        wire:model="materialsUpdate" value="{{ $material->id }}" checked>
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="original-box-shadow2 mt10">
+                        <div>果物</div>
+                        @foreach ($allMaterials as $material)
+                            @if ($material->material_type == '果物')
+                                <div class="mt10">
+                                    <input type="checkbox" id="{{ $material->material_name }}"
+                                        wire:model="materialsUpdate" value="{{ $material->id }}" checked>
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="original-box-shadow2 mt10">
+                        <div>乳製品</div>
+                        @foreach ($allMaterials as $material)
+                            @if ($material->material_type == '乳製品')
+                                <div class="mt10">
+                                    <input type="checkbox" id="{{ $material->material_name }}"
+                                        wire:model="materialsUpdate" value="{{ $material->id }}" checked>
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="original-box-shadow2 mt10">
+                        <div>麺類</div>
+                        @foreach ($allMaterials as $material)
+                            @if ($material->material_type == '麺類')
+                                <div class="mt10">
+                                    <input type="checkbox" id="{{ $material->material_name }}"
+                                        wire:model="materialsUpdate" value="{{ $material->id }}" checked>
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                    <div class="original-box-shadow2 mt10">
+                        <div>その他</div>
+                        @foreach ($allMaterials as $material)
+                            @if ($material->material_type == 'その他')
+                                <div class="mt10">
+                                    <input type="checkbox" id="{{ $material->material_name }}"
+                                        wire:model="materialsUpdate" value="{{ $material->id }}" checked>
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div><img class="ra10" src="{{ $material->material_img }}" alt="">
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+
+
                 </div>
 
                 <div class="tcenter">材料がない時は材料を新規登録しましょう</div>
@@ -78,7 +165,8 @@
                     <button class="original-button ccenter3" type="submit">登録</button>
                 </div>
             </form>
-            <div class="mt30"><button class="original-button ccenter3" wire:click="screen2">このメニューを削除</button></div>
+            <div class="mt30"><button class="original-button ccenter3" wire:click="screen2">このメニューを削除</button>
+            </div>
         @endif
     </div>
 

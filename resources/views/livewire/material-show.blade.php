@@ -10,7 +10,7 @@
                     @foreach ($meatMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
-                            <div><img src="{{ $material->material_img }}" alt=""></div>
+                            <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
                         </div>
                     @endforeach
                 </div>
@@ -22,7 +22,7 @@
                     @foreach ($fishMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
-                            <div><img src="{{ $material->material_img }}" alt=""></div>
+                            <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
                         </div>
                     @endforeach
                 </div>
@@ -33,7 +33,7 @@
                     @foreach ($vegeMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
-                            <div><img src="{{ $material->material_img }}" alt=""></div>
+                            <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
                         </div>
                     @endforeach
                 </div>
@@ -44,7 +44,7 @@
                     @foreach ($fruitMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
-                            <div><img src="{{ $material->material_img }}" alt=""></div>
+                            <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
                         </div>
                     @endforeach
                 </div>
@@ -55,7 +55,7 @@
                     @foreach ($dairyMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
-                            <div><img src="{{ $material->material_img }}" alt=""></div>
+                            <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
                         </div>
                     @endforeach
                 </div>
@@ -66,7 +66,7 @@
                     <div>
                         @foreach ($noodleMate as $material)
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
-                            <div><img src="{{ $material->material_img }}" alt=""></div>
+                            <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
                         @endforeach
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                     @foreach ($otherMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
-                            <div><img src="{{ $material->material_img }}" alt=""></div>
+                            <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
                         </div>
                     @endforeach
                 </div>

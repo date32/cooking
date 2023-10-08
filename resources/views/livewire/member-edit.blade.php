@@ -7,7 +7,7 @@
         <div class="grid3">
             <div class="original-box-shadow2">
                 <div class="f1-5 tcenter">【好き】</div>
-                <div class="grid3">
+                <div class="grid3 sp-grid2">
                     @foreach ($member->likesAndDislikes as $likesAndDislikes)
                         @if ($likesAndDislikes->evaluation_id == 1)
                             <div>
@@ -22,7 +22,7 @@
 
             <div class="original-box-shadow2">
                 <div class="f1-5 tcenter">【普通】</div>
-                <div class="grid3">
+                <div class="grid3 sp-grid2">
                     @foreach ($member->likesAndDislikes as $likesAndDislikes)
                         @if ($likesAndDislikes->evaluation_id == 2)
                             <div>
@@ -36,7 +36,7 @@
 
             <div class="original-box-shadow2">
                 <div class="f1-5 tcenter">【嫌い】</div>
-                <div class="grid3">
+                <div class="grid3 sp-grid2">
                     @foreach ($member->likesAndDislikes as $likesAndDislikes)
                         @if ($likesAndDislikes->evaluation_id == 3)
                             <div>
@@ -51,9 +51,9 @@
 
         <form wire:submit.prevent="likeDislikeStore">
             <div class="mt30 tcenter">【好き嫌いの登録】</div>
-            <div class="grid8 mt10">
+            <div class="grid8 mt10 sp-grid3">
                 @foreach ($menus as $menu)
-                <div class="original-box-shadow2">
+                <div class="original-box-shadow2 mt10">
                     <input type="checkbox" id="{{ $menu->menu_name }}" value="{{ $menu->id }}" wire:model="menus_id">
                     <label for="{{ $menu->menu_name }}">{{ $menu->menu_name }}</label>
                     <div class="mt10"><img class="ra10" src="{{ $menu->menu_img }}" alt=""></div>

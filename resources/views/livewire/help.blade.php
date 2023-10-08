@@ -5,7 +5,7 @@
         <div class="tcenter f1-5">メニューの相談</div>
         @if ($screen == 1)
             <div class="mt10 tcenter">【最近のメニューを参考にする】</div>
-            <div class="grid6 mt10 mb30 sp-grid3">
+            <div class="grid6 mb20 sp-grid3">
                 @foreach ($dates as $date)
                     <div class="original-box-shadow mt10">
 
@@ -16,7 +16,7 @@
                         <div class="tcenter mt10">{{ $date->date }}</div>
                         <div class="tcenter">{{ $date->timing->timing_name }}</div>
 
-                        <div class="grid3 mt10">
+                        <div class="grid3 mt10 sp-f0-5">
                             <div class="">
                                 <div class="tcenter">好き</div>
                                 @foreach ($date->menu->likesAndDislikes as $likesAndDislike)
@@ -48,7 +48,7 @@
             <div class="bbd"></div>
 
             <div class="mt10 tcenter">【メニュー一覧から選ぶ】</div>
-            <div class="grid6 mt10 mb30 sp-grid3">
+            <div class="grid6 mb30 sp-grid3">
                 @foreach ($menus as $menu)
                     <div class="original-box-shadow mt10">
                         <div class="tcenter f1-5"><button class="a"
@@ -61,18 +61,18 @@
 
             <div class="mt10 tcenter">【今ある材料から選ぶ】</div>
             <form wire:submit.prevent="choiceMaterialsForMenu">
-                <div class="grid8 mt10 mb30 sp-grid3 sp-mb100">
+                <div class="grid8 mb20 sp-grid3">
                     @foreach ($materials as $material)
                         <div class="original-box-shadow mt10">
                             <input type="checkbox" wire:model="choiceMaterialsId" id="{{ $material->material_name }}"
                                 value="{{ $material->id }}" name="1">
                             <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
-                            <div class="mt10"><img src="{{ $material->material_img }}" alt=""></div>
+                            <div class="mt10"><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
                         </div>
                     @endforeach
                 </div>
 
-                <div class="mb30"><button class="original-button ccenter3" type="submit">メニューを探す</button></div>
+                <div class="mb20"><button class="original-button ccenter3" type="submit">メニューを探す</button></div>
             </form>
             <div class="bbd"></div>
         @endif
@@ -130,7 +130,7 @@
                     <div class="tcenter sp-f0-5">【足りない材料があるメニュー】</div>
                     <div class="grid3 mt10 sp-block">
                         @foreach ($falseMenu as $falseMenuItem)
-                            <div>
+                            <div class="bbd">
                                 <div class="tcenter"><button class="a f1-5"
                                         wire:click="choice({{ $falseMenuItem->id }})">{{ $falseMenuItem->menu_name }}</button>
                                 </div>
