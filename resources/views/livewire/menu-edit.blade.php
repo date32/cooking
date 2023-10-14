@@ -14,6 +14,7 @@
                     <div class="original-box-shadow mt10">
                         <div>{{ $item->material->material_name }}</div>
                         <div><img class="ra10" src="{{ $item->material->material_img }}" alt=""></div>
+                        <div><button wire:click="materialDelete({{$item->material->id}})" class="a">削除</button></div>
                     </div>
                 @endforeach
             </div>

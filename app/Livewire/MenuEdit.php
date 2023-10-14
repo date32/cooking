@@ -71,12 +71,6 @@ class MenuEdit extends Component
 
         // 材料変更がある場合
         if ($this->materialsUpdate != null) {
-            // 一旦このメニューの材料情報を消す
-            $deleteItems = MaterialOfMenu::where('menu_id', $this->menuDetail->id)->get();
-            foreach ($deleteItems as $deleteItem) {
-                $deleteItem->delete();
-            }
-            // 新しく材料情報を保存
             foreach ($this->materialsUpdate as $item) {
                 $mate_menu = new MaterialOfMenu();
                 $mate_menu->menu_id = $this->menuDetail->id;
@@ -85,7 +79,12 @@ class MenuEdit extends Component
             }
         }
 
-        return redirect()->route('menuShow');
+        return redirect('/menu/edit/' . $this->menuDetail->id);
+    }
+    public function materialDelete(String $id) {
+        $deleteData = MaterialOfMenu::where('menu_id', $this->menuDetail->id)->where('material_id', $id)->first();
+        $deleteData->delete();
+        return redirect('/menu/edit/' . $this->menuDetail->id);
     }
     public function menuDelete()
     {

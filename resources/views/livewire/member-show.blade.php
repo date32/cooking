@@ -1,5 +1,6 @@
 <div class="img8">
     <livewire:components.header />
+    <div class="wi-80 sp-80 ccenter3 mt20"><a href="/">トップへ</a></div>
 
     <div class="tcenter f1-5">Dの一族</div>
     <div class="grid3 wi-90 ccenter3 mb30 sp-block">
@@ -9,7 +10,7 @@
 
                 <div class="grid3">
                     <div>
-                        <div>【好き】</div>
+                        <div class="tcenter">【好き】</div>
                         @foreach ($member->likesAndDislikes as $likesAndDislikes)
                             @if ($likesAndDislikes->evaluation_id == 1)
                                 <div class="mt10">
@@ -21,7 +22,7 @@
                         @endforeach
                     </div>
                     <div>
-                        <div>【普通】</div>
+                        <div class="tcenter">【普通】</div>
                         @foreach ($member->likesAndDislikes as $likesAndDislikes)
                             @if ($likesAndDislikes->evaluation_id == 2)
                                 <div class="mt10">
@@ -32,7 +33,7 @@
                         @endforeach
                     </div>
                     <div>
-                        <div>【嫌い】</div>
+                        <div class="tcenter">【嫌い】</div>
                         @foreach ($member->likesAndDislikes as $likesAndDislikes)
                             @if ($likesAndDislikes->evaluation_id == 3)
                                 <div class="mt10">
