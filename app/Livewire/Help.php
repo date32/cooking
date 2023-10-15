@@ -94,6 +94,9 @@ class Help extends Component
         }
 
         // メニューの材料の配列
+        $trueId = null; //初期
+        $falseId = null; //初期
+
         foreach ($this->resultMenus as $items) {
             foreach ($items->materialOfMenus as $item) {
                 $menuMate[] = $item->material->material_name;
