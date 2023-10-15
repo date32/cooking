@@ -32,16 +32,57 @@ class Help extends Component
         $this->dates = Date::with(['timing', 'menu.likesAndDislikes.user'])->orderBy('date', 'desc')->take(6)->get();
         $this->menus = Menu::with('materialOfMenus.material')->get();
         $this->materials = Material::with('materialOfMenus.menu')->get();
+
+
+        $d = null;
+        $e = null;
+
+        $a = ['にんじん'];
+        $aa = ['にんじん', 'たまねぎ', 'キャベツ'];
+        $aaa = ['にんじん', 'たまねぎ', 'ルー', 'いも'];
+        $aaaa = ['あ', 'にんじん', 'たまねぎ', 'キャベツ'];
+
+        $b = ['にんじん', 'たまねぎ', 'ルー', 'いも'];
+
+        $c = !array_diff($a, $b);
+        if ($c) {
+            $d[] = 1;
+        } else {
+            $e[] = 11;
+        }
+
+        $c = !array_diff($aa, $b);
+        if ($c) {
+            $d[] = 2;
+        } else {
+            $e[] = 22;
+        }
+
+        $c = !array_diff($aaa, $b);
+        if ($c) {
+            $d[] = 3;
+        } else {
+            $e[] = 33;
+        }
+
+        $c = !array_diff($aaaa, $b);
+        if ($c) {
+            $d[] = 4;
+        } else {
+            $e[] = 44;
+        }
+        // dd($e);
+
     }
 
     public function choice($id)
     {
-    
-        if( $this->choiceMaterials) { //screen3から来た場合
+
+        if ($this->choiceMaterials) { //screen3から来た場合
             $this->screen = 4;
             $this->choiceMenu = Menu::find($id);
             $this->timings = Timing::get();
-        }else {
+        } else {
             $this->screen = 2;
             $this->choiceMenu = Menu::find($id);
             $this->timings = Timing::get();
@@ -68,8 +109,8 @@ class Help extends Component
         // フォームから選んだ材料を取得
         // $this->choiceMaterials = Material::whereIn('id', $this->choiceMaterialsId)->get();
         $choiceMaterials = Material::whereIn('id', $this->choiceMaterialsId)->get();
-        foreach($choiceMaterials as $item) {
-            $this->choiceMaterials[] = $item->material_name;            
+        foreach ($choiceMaterials as $item) {
+            $this->choiceMaterials[] = $item->material_name;
         }
 
         // フォームから選んだ材料を含むメニューを取得
@@ -98,6 +139,7 @@ class Help extends Component
         $falseId = null; //初期
 
         foreach ($this->resultMenus as $items) {
+            $menuMate = null; //初期
             foreach ($items->materialOfMenus as $item) {
                 $menuMate[] = $item->material->material_name;
             }
@@ -112,13 +154,12 @@ class Help extends Component
         }
 
         // 作れるメニューと作れないメニューを上記のメニューIdからメニュー情報を取得する
-        if($trueId) {
+        if ($trueId) {
             $this->trueMenu = Menu::with('materialOfMenus.material')->whereIn('id', $trueId)->get();
         }
-        if($falseId) {
+        if ($falseId) {
             $this->falseMenu = Menu::with('materialOfMenus.material')->whereIn('id', $falseId)->get();
         }
-
     }
 
     public function screen3()
