@@ -37,8 +37,8 @@
                 <div class="tcenter mt10"><input type="file" wire:model="material_img"></div>
 
                 @if ($material_img)
-                    <div class="">
-                        <img class="mt10 ra10 ccenter3 wi-50 sp-80"
+                    <div>
+                        <img class="mt10 ra10 ccenter3 wi2 sp-50"
                             src="{{ asset('storage/' . $material_img->store('images', 'public')) }}?{{ time() }}"
                             alt="アップロードされた画像">
                     </div>

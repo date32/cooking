@@ -62,7 +62,7 @@ class MenuEdit extends Component
                 // ファイル名変更
                 $file_name = $name . '.jpg';
                 // ファイルを保存　storageというフォルダに保存される
-                $this->menul_img->storeAs('public/' . $dir, $file_name);
+                $this->menu_img->storeAs('public/' . $dir, $file_name);
                 // 表示するパスは/storage/ディレクトリ名/ファイル名　publicの直下を参照する
                 $menuDetail->menu_img = '/storage' . '/' . $dir . '/' . $file_name;
             }

@@ -32,47 +32,6 @@ class Help extends Component
         $this->dates = Date::with(['timing', 'menu.likesAndDislikes.user'])->orderBy('date', 'desc')->take(6)->get();
         $this->menus = Menu::with('materialOfMenus.material')->get();
         $this->materials = Material::with('materialOfMenus.menu')->get();
-
-
-        $d = null;
-        $e = null;
-
-        $a = ['にんじん'];
-        $aa = ['にんじん', 'たまねぎ', 'キャベツ'];
-        $aaa = ['にんじん', 'たまねぎ', 'ルー', 'いも'];
-        $aaaa = ['あ', 'にんじん', 'たまねぎ', 'キャベツ'];
-
-        $b = ['にんじん', 'たまねぎ', 'ルー', 'いも'];
-
-        $c = !array_diff($a, $b);
-        if ($c) {
-            $d[] = 1;
-        } else {
-            $e[] = 11;
-        }
-
-        $c = !array_diff($aa, $b);
-        if ($c) {
-            $d[] = 2;
-        } else {
-            $e[] = 22;
-        }
-
-        $c = !array_diff($aaa, $b);
-        if ($c) {
-            $d[] = 3;
-        } else {
-            $e[] = 33;
-        }
-
-        $c = !array_diff($aaaa, $b);
-        if ($c) {
-            $d[] = 4;
-        } else {
-            $e[] = 44;
-        }
-        // dd($e);
-
     }
 
     public function choice($id)

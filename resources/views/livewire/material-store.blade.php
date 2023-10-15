@@ -5,7 +5,7 @@
         <form wire:submit.prevent="materialStore">
             <div class="tcenter mt10">【材料名】</div>
             <div class="tcenter"><input class="wi-30 sp-80" type="text" wire:model="material_name" required></div>
-            
+
             <div class="tcenter mt10">【種類】</div>
             <div class="mt10 tcenter">
                 <input type="radio" id="type1" wire:model="material_type" value="肉類" required name="1">
@@ -31,10 +31,18 @@
             <div class="tcenter mt10">【画像】</div>
             <div class="tcenter mt10"><input type="file" wire:model="material_img"></div>
 
+            @if ($material_img)
+                <div>
+                    <img class="mt10 ra10 ccenter3 wi2 sp-50"
+                        src="{{ asset('storage/' . $material_img->store('images', 'public')) }}?{{ time() }}"
+                        alt="アップロードされた画像">
+                </div>
+            @endif
+
             <div class="mt30"><button class="original-button ccenter3" type="submit">登録</button></div>
         </form>
     </div>
-    
+
     <livewire:components.link />
 
     <style>
@@ -55,11 +63,13 @@
             box-shadow: 5px 5px 0px 0px rgba(51, 51, 51, 1);
             background-color: #c1ff82;
         }
+
         .original-button:hover {
             box-shadow: 0 0 #333;
             color: #fff;
             background-color: #333;
         }
+
         .img6::before {
             content: "";
             background-image: url(../img/img6.jpg);

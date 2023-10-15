@@ -48,7 +48,7 @@
             <div class="bbd"></div>
 
             <div class="mt10 tcenter">【メニュー一覧から選ぶ】</div>
-            <div class="grid6 mb30 sp-grid3">
+            <div class="grid6 mb30 sp-grid4">
                 @foreach ($menus as $menu)
                     <div class="original-box-shadow mt10">
                         <div class="tcenter f1-5"><button class="a"
@@ -61,24 +61,142 @@
 
             <div class="mt10 tcenter">【今ある材料から選ぶ】</div>
             <form wire:submit.prevent="choiceMaterialsForMenu">
-                <div class="grid8 mb20 sp-grid3">
-                    @foreach ($materials as $material)
-                        <div class="original-box-shadow mt10">
-                            <input type="checkbox" wire:model="choiceMaterialsId" id="{{ $material->material_name }}"
-                                value="{{ $material->id }}" name="1">
-                            <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
-                            <div class="mt10"><img class="ra10" src="{{ $material->material_img }}" alt="">
-                            </div>
-                        </div>
-                    @endforeach
+                <div class="original-box-shadow mt10">
+                    <div>肉類</div>
+                    <div class="grid8 mb20 sp-grid4">
+                        @foreach ($materials as $material)
+                            @if ($material->material_type == '肉類')
+                                <div>
+                                    <input type="checkbox" wire:model="choiceMaterialsId"
+                                        id="{{ $material->material_name }}" value="{{ $material->id }}"
+                                        name="1">
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div class="mt10"><img class="ra10" src="{{ $material->material_img }}"
+                                            alt="">
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+                <div class="original-box-shadow mt10">
+                    <div>魚介類</div>
+                    <div class="grid8 mb20 sp-grid4">
+                        @foreach ($materials as $material)
+                            @if ($material->material_type == '魚介類')
+                                <div>
+                                    <input type="checkbox" wire:model="choiceMaterialsId"
+                                        id="{{ $material->material_name }}" value="{{ $material->id }}"
+                                        name="1">
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div class="mt10"><img class="ra10" src="{{ $material->material_img }}"
+                                            alt="">
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+                <div class="original-box-shadow mt10">
+                    <div>野菜</div>
+                    <div class="grid8 mb20 sp-grid4">
+                        @foreach ($materials as $material)
+                            @if ($material->material_type == '野菜')
+                                <div>
+                                    <input type="checkbox" wire:model="choiceMaterialsId"
+                                        id="{{ $material->material_name }}" value="{{ $material->id }}"
+                                        name="1">
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div class="mt10"><img class="ra10" src="{{ $material->material_img }}"
+                                            alt="">
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+                <div class="original-box-shadow mt10">
+                    <div>果物</div>
+                    <div class="grid8 mb20 sp-grid4">
+                        @foreach ($materials as $material)
+                            @if ($material->material_type == '果物')
+                                <div>
+                                    <input type="checkbox" wire:model="choiceMaterialsId"
+                                        id="{{ $material->material_name }}" value="{{ $material->id }}"
+                                        name="1">
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div class="mt10"><img class="ra10" src="{{ $material->material_img }}"
+                                            alt="">
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+                <div class="original-box-shadow mt10">
+                    <div>乳製品</div>
+                    <div class="grid8 mb20 sp-grid4">
+                        @foreach ($materials as $material)
+                            @if ($material->material_type == '乳製品')
+                                <div>
+                                    <input type="checkbox" wire:model="choiceMaterialsId"
+                                        id="{{ $material->material_name }}" value="{{ $material->id }}"
+                                        name="1">
+                                    <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div class="mt10"><img class="ra10" src="{{ $material->material_img }}"
+                                            alt="">
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+                <div class="original-box-shadow mt10">
+                    <div>麺類</div>
+                    <div class="grid8 mb20 sp-grid4">
+                        @foreach ($materials as $material)
+                            @if ($material->material_type == '麺類')
+                                <div>
+                                    <input type="checkbox" wire:model="choiceMaterialsId"
+                                        id="{{ $material->material_name }}" value="{{ $material->id }}"
+                                        name="1">
+                                    <label
+                                        for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div class="mt10"><img class="ra10" src="{{ $material->material_img }}"
+                                            alt="">
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
+                <div class="original-box-shadow mt10">
+                    <div>その他</div>
+                    <div class="grid8 mb20 sp-grid4">
+                        @foreach ($materials as $material)
+                            @if ($material->material_type == 'その他')
+                                <div>
+                                    <input type="checkbox" wire:model="choiceMaterialsId"
+                                        id="{{ $material->material_name }}" value="{{ $material->id }}"
+                                        name="1">
+                                    <label
+                                        for="{{ $material->material_name }}">{{ $material->material_name }}</label>
+                                    <div class="mt10"><img class="ra10" src="{{ $material->material_img }}"
+                                            alt="">
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
                 </div>
 
-                <div class="mb20"><button class="original-button ccenter3" type="submit">メニューを探す</button></div>
+                <div class="mt30 mb20"><button class="original-button ccenter3" type="submit">メニューを探す</button></div>
             </form>
             <div class="bbd"></div>
         @endif
 
         @if ($screen == 2 || $screen == 4)
+            <div><img class="ccenter3 mt10 ra10 wi-50" src="{{ $choiceMenu->menu_img }}" alt=""></div>
             <div class="tcenter mt10"><span class="f1-5">【{{ $choiceMenu->menu_name }}】</span>を今日の</div>
             <form wire:submit.prevent="decision({{ $choiceMenu->id }})">
                 <div class="tcenter mt10">
@@ -122,7 +240,8 @@
                                     <div class="tcenter"><button class="a f1-5"
                                             wire:click="choice({{ $trueMenuItem->id }})">{{ $trueMenuItem->menu_name }}</button>
                                     </div>
-                                    <div><img class="ra10" src="{{ $trueMenuItem->menu_img }}" alt=""></div>
+                                    <div><img class="ra10" src="{{ $trueMenuItem->menu_img }}" alt="">
+                                    </div>
                                 </div>
                             @endforeach
                         @endif
@@ -138,7 +257,8 @@
                                     <div class="tcenter"><button class="a f1-5"
                                             wire:click="choice({{ $falseMenuItem->id }})">{{ $falseMenuItem->menu_name }}</button>
                                     </div>
-                                    <div><img class="ra10" src="{{ $falseMenuItem->menu_img }}" alt=""></div>
+                                    <div><img class="ra10" src="{{ $falseMenuItem->menu_img }}" alt="">
+                                    </div>
                                     @foreach ($falseMenuItem->materialOfMenus as $materialOfMenusItem)
                                         @if (in_array($materialOfMenusItem->material->material_name, $choiceMaterials))
                                             <div class="true-color tcenter">

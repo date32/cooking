@@ -6,7 +6,7 @@
         <div class="grid4 mt10 sp-block">
             <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5">肉類</div>
-                <div class="grid2">
+                <div class="grid2 sp-grid4">
                     @foreach ($meatMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
@@ -18,7 +18,7 @@
 
             <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5">魚介類</div>
-                <div class="grid2">
+                <div class="grid2 sp-grid4">
                     @foreach ($fishMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
@@ -29,7 +29,7 @@
             </div>
             <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5">野菜</div>
-                <div class="grid2">
+                <div class="grid2 sp-grid4">
                     @foreach ($vegeMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
@@ -40,7 +40,7 @@
             </div>
             <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5">果物</div>
-                <div class="grid2">
+                <div class="grid2 sp-grid4">
                     @foreach ($fruitMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
@@ -51,7 +51,7 @@
             </div>
             <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5">乳製品</div>
-                <div class="grid2">
+                <div class="grid2 sp-grid4">
                     @foreach ($dairyMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
@@ -62,18 +62,18 @@
             </div>
             <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5">麺類</div>
-                <div class="grid2">
-                    <div>
-                        @foreach ($noodleMate as $material)
+                <div class="grid2 sp-grid4">
+                    @foreach ($noodleMate as $material)
+                        <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
                             <div><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
-                        @endforeach
-                    </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
             <div class="original-box-shadow2 mt10">
                 <div class="tcenter f1-5">その他</div>
-                <div class="grid2">
+                <div class="grid2 sp-grid4">
                     @foreach ($otherMate as $material)
                         <div>
                             <div><a href="/material/edit/{{ $material->id }}">{{ $material->material_name }}</a></div>
@@ -95,6 +95,7 @@
             border-radius: 3px;
             box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
         }
+
         .img7::before {
             content: "";
             background-image: url(../img/img7.jpg);
