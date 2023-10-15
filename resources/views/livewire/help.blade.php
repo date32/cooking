@@ -9,7 +9,7 @@
                 @foreach ($dates as $date)
                     <div class="original-box-shadow mt10">
 
-                        <div class="tcenter f1-5"><a
+                        <div class="tcenter"><a
                                 href="/menu/edit/{{ $date->menu->id }}">{{ $date->menu->menu_name }}</a>
                         </div>
                         <div class="mt10"><img class="ra10" src="{{ $date->menu->menu_img }}" alt=""></div>
@@ -51,7 +51,7 @@
             <div class="grid6 mb30 sp-grid4">
                 @foreach ($menus as $menu)
                     <div class="original-box-shadow mt10">
-                        <div class="tcenter f1-5"><button class="a"
+                        <div class="tcenter"><button class="a"
                                 wire:click="choice({{ $menu->id }})">{{ $menu->menu_name }}</button></div>
                         <div class="mt10"><img class="ra10" src="{{ $menu->menu_img }}" alt=""></div>
                     </div>
