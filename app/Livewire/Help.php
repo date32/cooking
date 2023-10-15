@@ -109,8 +109,12 @@ class Help extends Component
         }
 
         // 作れるメニューと作れないメニューを上記のメニューIdからメニュー情報を取得する
-        $this->trueMenu = Menu::with('materialOfMenus.material')->whereIn('id', $trueId)->get();
-        $this->falseMenu = Menu::with('materialOfMenus.material')->whereIn('id', $falseId)->get();
+        if($trueId) {
+            $this->trueMenu = Menu::with('materialOfMenus.material')->whereIn('id', $trueId)->get();
+        }
+        if($falseId) {
+            $this->falseMenu = Menu::with('materialOfMenus.material')->whereIn('id', $falseId)->get();
+        }
 
     }
 

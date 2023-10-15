@@ -67,7 +67,8 @@
                             <input type="checkbox" wire:model="choiceMaterialsId" id="{{ $material->material_name }}"
                                 value="{{ $material->id }}" name="1">
                             <label for="{{ $material->material_name }}">{{ $material->material_name }}</label>
-                            <div class="mt10"><img class="ra10" src="{{ $material->material_img }}" alt=""></div>
+                            <div class="mt10"><img class="ra10" src="{{ $material->material_img }}" alt="">
+                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -95,12 +96,12 @@
                 </div>
             </form>
             @if ($screen == 2)
-            <div class="tcenter"><a href="/help">戻る</a></div>
+                <div class="tcenter"><a href="/help">戻る</a></div>
             @endif
             @if ($screen == 4)
-            <div class="tcenter"><button class="a" wire:click="screen3">戻る</button></div>
+                <div class="tcenter"><button class="a" wire:click="screen3">戻る</button></div>
             @endif
-            
+
         @endif
 
         @if ($screen == 3)
@@ -115,35 +116,41 @@
                 <div class="original-box-shadow2">
                     <div class="tcenter sp-f0-5">【調理できるメニュー】</div>
                     <div class="grid3 mt10 sp-block">
-                        @foreach ($trueMenu as $trueMenuItem)
-                            <div>
-                                <div class="tcenter"><button class="a f1-5"
-                                        wire:click="choice({{ $trueMenuItem->id }})">{{ $trueMenuItem->menu_name }}</button>
+                        @if ($trueMenu)
+                            @foreach ($trueMenu as $trueMenuItem)
+                                <div>
+                                    <div class="tcenter"><button class="a f1-5"
+                                            wire:click="choice({{ $trueMenuItem->id }})">{{ $trueMenuItem->menu_name }}</button>
+                                    </div>
+                                    <div><img class="ra10" src="{{ $trueMenuItem->menu_img }}" alt=""></div>
                                 </div>
-                                <div><img class="ra10" src="{{ $trueMenuItem->menu_img }}" alt=""></div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        @endif
                     </div>
                 </div>
 
                 <div class="original-box-shadow2">
                     <div class="tcenter sp-f0-5">【足りない材料があるメニュー】</div>
                     <div class="grid3 mt10 sp-block">
-                        @foreach ($falseMenu as $falseMenuItem)
-                            <div class="bbd">
-                                <div class="tcenter"><button class="a f1-5"
-                                        wire:click="choice({{ $falseMenuItem->id }})">{{ $falseMenuItem->menu_name }}</button>
+                        @if ($falseMenu)
+                            @foreach ($falseMenu as $falseMenuItem)
+                                <div class="bbd">
+                                    <div class="tcenter"><button class="a f1-5"
+                                            wire:click="choice({{ $falseMenuItem->id }})">{{ $falseMenuItem->menu_name }}</button>
+                                    </div>
+                                    <div><img class="ra10" src="{{ $falseMenuItem->menu_img }}" alt=""></div>
+                                    @foreach ($falseMenuItem->materialOfMenus as $materialOfMenusItem)
+                                        @if (in_array($materialOfMenusItem->material->material_name, $choiceMaterials))
+                                            <div class="true-color tcenter">
+                                                {{ $materialOfMenusItem->material->material_name }}</div>
+                                        @else
+                                            <div class="false-color tcenter">
+                                                {{ $materialOfMenusItem->material->material_name }}</div>
+                                        @endif
+                                    @endforeach
                                 </div>
-                                <div><img class="ra10" src="{{ $falseMenuItem->menu_img }}" alt=""></div>
-                                @foreach ($falseMenuItem->materialOfMenus as $materialOfMenusItem)
-                                    @if (in_array($materialOfMenusItem->material->material_name, $choiceMaterials))
-                                        <div class="true-color tcenter">{{ $materialOfMenusItem->material->material_name }}</div>
-                                    @else
-                                        <div class="false-color tcenter">{{ $materialOfMenusItem->material->material_name }}</div>
-                                    @endif
-                                @endforeach
-                            </div>
-                        @endforeach
+                            @endforeach
+                        @endif
                     </div>
                 </div>
             </div>
@@ -176,6 +183,7 @@
             border-radius: 3px;
             box-shadow: 6px 6px 10px 0px rgba(0, 0, 0, 0.4);
         }
+
         .original-box-shadow2 {
             color: #333333;
             background-color: #dddddd72;

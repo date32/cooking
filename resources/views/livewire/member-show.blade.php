@@ -1,6 +1,5 @@
 <div class="img8">
     <livewire:components.header />
-    <div class="wi-80 sp-80 ccenter3 mt20"><a href="/">トップへ</a></div>
 
     <div class="tcenter f1-5">Dの一族</div>
     <div class="grid3 wi-90 ccenter3 mb30 sp-block">
